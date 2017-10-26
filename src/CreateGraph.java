@@ -13,8 +13,6 @@ public class CreateGraph {
         Scanner sc;
 
 
-        // lolololol
-
             sc = new Scanner(new File(path));
 
         this.v = (sc.nextInt());
