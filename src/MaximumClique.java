@@ -1,5 +1,3 @@
-import edu.rit.util.IntList;
-
 import java.util.HashSet;
 import java.util.Iterator;
 
@@ -10,7 +8,7 @@ public class MaximumClique {
 
     public static void main(String[] s) {
 
-
+        //
         //CreateGraph g = new CreateGraph("D:\\RIT\\SEM3\\Parallel Prog\\project\\4N4E.txt");
         CreateGraph g = new CreateGraph("D:\\RIT\\SEM3\\Parallel Prog\\project\\200N987E.txt");
 
