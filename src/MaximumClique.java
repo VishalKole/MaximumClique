@@ -36,7 +36,6 @@ public class MaximumClique {
                 maximum = (HashSet) R.clone();
                 size = R.size();
             }
-
         }
 
         while (!P.isEmpty()) {
@@ -55,7 +54,6 @@ public class MaximumClique {
             BronKerbosch1(R2, P2, X2);
             P.remove(i);
             X.add(i);
-
         }
     }
 }

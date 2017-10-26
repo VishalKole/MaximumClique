@@ -27,11 +27,8 @@ public class CreateGraph {
             b = sc.nextInt();
             g[a-1].add(b-1);
             g[b-1].add(a-1);
-
         }
-
         return g;
-
     }
 
     public HashSet<Integer> getHashSet(){
