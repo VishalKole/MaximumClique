@@ -14,6 +14,9 @@ public class CreateGraph {
     public HashSet[] GenerateGraph() throws Exception {
         Scanner sc;
 
+
+        // lolololol
+
             sc = new Scanner(new File(path));
 
         this.v = (sc.nextInt());
