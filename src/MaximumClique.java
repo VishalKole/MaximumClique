@@ -1,5 +1,3 @@
-import edu.rit.util.IntList;
-
 import java.util.HashSet;
 import java.util.Iterator;
 
@@ -9,15 +7,12 @@ public class MaximumClique {
     static HashSet<Integer> maximum;
 
     public static void main(String[] s) {
-
-
-        //CreateGraph g = new CreateGraph("D:\\RIT\\SEM3\\Parallel Prog\\project\\4N4E.txt");
-        CreateGraph g = new CreateGraph("D:\\RIT\\SEM3\\Parallel Prog\\project\\200N987E.txt");
+        CreateGraph g = new CreateGraph("\\res\\200N987E.txt");
 
         try {
             graph = g.GenerateGraph();
             HashSet<Integer> P = g.getHashSet();
-            BronKerbosch1(new HashSet<Integer>(), P, new HashSet<Integer>());
+            BronKerbosch1(new HashSet<Integer>(), P, new HashSet<>());
 
             for (Integer I : maximum) {
                 System.out.print(I + " ");

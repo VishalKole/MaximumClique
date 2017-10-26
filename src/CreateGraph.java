@@ -1,5 +1,3 @@
-import edu.rit.util.*;
-import java.util.Set;
 import java.util.*;
 import java.io.*;
 
@@ -17,7 +15,6 @@ public class CreateGraph {
             sc = new Scanner(new File(path));
 
         this.v = (sc.nextInt());
-       // List<Set<Integer>>[] g = new List[f];
         HashSet<Integer>[] g = new HashSet[v];
 
         for(int i=0;i<v;i++)
