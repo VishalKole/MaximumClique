@@ -7,18 +7,20 @@ public class MaximumClique {
     static HashSet<Integer> maximum;
 
     public static void main(String[] s) {
-        CreateGraph g = new CreateGraph("\\res\\200N987E.txt");
+        CreateGraph g = new CreateGraph("./res/200N987E.txt");
 
         try {
             graph = g.GenerateGraph();
             HashSet<Integer> P = g.getHashSet();
             BronKerbosch1(new HashSet<Integer>(), P, new HashSet<>());
 
+            System.out.println("Vertices in the maximum clique: \n");
             for (Integer I : maximum) {
                 System.out.print(I + " ");
             }
 
-            System.out.println("\\n"+size);
+            System.out.println("\n");
+            System.out.println("Maximum Clique Size: " + size);
 
 
         } catch (Exception e) {
