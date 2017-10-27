@@ -12,8 +12,7 @@ public class CreateGraph {
     public HashSet[] GenerateGraph() throws Exception {
         Scanner sc;
 
-
-            sc = new Scanner(new File(path));
+        sc = new Scanner(new File(path));
 
         this.v = (sc.nextInt());
         HashSet<Integer>[] g = new HashSet[v];
@@ -28,11 +27,8 @@ public class CreateGraph {
             b = sc.nextInt();
             g[a-1].add(b-1);
             g[b-1].add(a-1);
-
         }
-
         return g;
-
     }
 
     public HashSet<Integer> getHashSet(){
