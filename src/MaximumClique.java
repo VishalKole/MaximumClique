@@ -7,7 +7,7 @@ public class MaximumClique {
     static HashSet<Integer> maximum;
 
     public static void main(String[] s) {
-        CreateGraph g = new CreateGraph("\\res\\200N987E.txt");
+        CreateGraph g = new CreateGraph(".\\res\\200N987E.txt");
 
         try {
             graph = g.GenerateGraph();
@@ -18,7 +18,7 @@ public class MaximumClique {
                 System.out.print(I + " ");
             }
 
-            System.out.println("\\n"+size);
+            System.out.println("\n" + size);
 
 
         } catch (Exception e) {
