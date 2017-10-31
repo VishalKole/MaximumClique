@@ -7,7 +7,7 @@ public class ReduceTask extends Task {
 
         MaximumCliqueVBL templateVBL = new MaximumCliqueVBL();
 
-        MaximumCliqueVBL StorageVBL = new MaximumCliqueVBL();
+        MaximumCliqueVBL StorageVBL;
 
         while ((StorageVBL = tryToTakeTuple(templateVBL)) != null)
             VBL.reduce(StorageVBL);
