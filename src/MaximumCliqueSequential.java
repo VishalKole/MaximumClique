@@ -35,7 +35,7 @@ public class MaximumCliqueSequential extends Task {
 
         if (P.isEmpty() && X.isEmpty()) {
             if (size < R.size()) {
-                maximum = (HashSet) R.clone();
+                maximum = (HashSet<Integer>) R.clone();
                 size = R.size();
             }
         }
@@ -47,9 +47,9 @@ public class MaximumCliqueSequential extends Task {
                 i = itr.next();
             }
 
-            HashSet<Integer> R2 = (HashSet) R.clone();
-            HashSet<Integer> P2 = (HashSet) P.clone();
-            HashSet<Integer> X2 = (HashSet) X.clone();
+            HashSet<Integer> R2 = (HashSet<Integer>) R.clone();
+            HashSet<Integer> P2 = (HashSet<Integer>) P.clone();
+            HashSet<Integer> X2 = (HashSet<Integer>) X.clone();
             P2.retainAll(graph[i]);
             X2.retainAll(graph[i]);
             R2.add(i);
