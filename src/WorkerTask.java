@@ -35,7 +35,7 @@ public class WorkerTask extends Task {
             @Override
             public void run(int i) throws Exception {
                 state = readTuple((new BKConfig()));
-                algo.runBronKerbosch(state.R, state.P, state.X);
+                algo.runBronKerbosch(state);
                 thrreductionVBL.reduce(algo.size, algo.maximum);
             }
         });
