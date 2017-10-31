@@ -64,7 +64,7 @@ public class MaximumCliqueVBL extends Tuple implements Vbl {
         if (this.size < size) {
             this.maximum.clear();
             for (Integer i : hset)
-`maximum.add(i);
+                maximum.add(i);
         }
     }
 }
