@@ -12,6 +12,10 @@ public class BronKerbosch {
         this.graph = graph;
     }
 
+    public void runBronKerbosch(BKConfig configuration){
+        runBronKerbosch(configuration.getR(), configuration.getP(), configuration.getX());
+    }
+
     public void runBronKerbosch(HashSet<Integer> R, HashSet<Integer> P, HashSet<Integer> X) {
 
         if (P.isEmpty() && X.isEmpty()) {
