@@ -1,7 +1,5 @@
 import edu.rit.pj2.Job;
-import edu.rit.pj2.tuple.EmptyTuple;
 import edu.rit.pj2.tuple.ObjectArrayTuple;
-
 import java.util.HashSet;
 
 public class MaximumCliqueParallel extends Job {
@@ -20,7 +18,7 @@ public class MaximumCliqueParallel extends Job {
         rule().atStart().task(CreateTuples.class);
         rule().atFinish().task(ReduceTask.class);
 
-        putTuple(new EmptyTuple());
+        //putTuple(new EmptyTuple());
 
     }
 }

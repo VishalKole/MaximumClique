@@ -19,12 +19,6 @@ public class WorkerTask extends Task {
         reductionVBL = new MaximumCliqueVBL();
         graph = readTuple(new ObjectArrayTuple<HashSet>()).item;
 
-        addTupleListener(new TupleListener<EmptyTuple>(new EmptyTuple()) {
-            public void run(EmptyTuple tuple) {
-                isMainJobDone = true;
-            }
-        });
-
 
         workerFor().schedule(guided).exec(new Loop() {
 
