@@ -13,8 +13,8 @@ public class BKConfig extends Tuple {
 
     public BKConfig(HashSet<Integer> r, HashSet<Integer> p, HashSet<Integer> x)
     {
-        this.R = p;
-        this.P = r;
+        this.R = r;
+        this.P = p;
         this.X = x;
 
 

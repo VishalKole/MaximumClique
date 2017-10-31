@@ -20,10 +20,22 @@ public class CreateTuples extends Task {
         }
 
         for (int i = 0; i < graph.length; ++i) {
+            HashSet<Integer> cloneP = (HashSet<Integer>) P.clone();
+            cloneP.remove(i);
+            cloneP.retainAll(graph[i]);
+            cloneP.removeAll(verticesCovered);
 
+            HashSet<Integer> R2 = new HashSet<>();
+            R2.add(i);
 
-            //BKConfig newConfig = new BKConfig();
-            //putTuple();
+            HashSet<Integer> X2 = new HashSet<>();
+            X2.addAll(verticesCovered);
+            X2.retainAll(graph[i]);
+
+            BKConfig newConfig = new BKConfig(R2, cloneP, X2);
+            putTuple(newConfig);
+
+            verticesCovered.add(i);
 
         }
 
