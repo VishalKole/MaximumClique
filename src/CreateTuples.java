@@ -1,4 +1,3 @@
-import com.intellij.vcs.log.Hash;
 import edu.rit.pj2.Task;
 import edu.rit.pj2.tuple.ObjectArrayTuple;
 
