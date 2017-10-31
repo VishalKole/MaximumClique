@@ -7,10 +7,13 @@ public class CreateTuples extends Task {
 
     HashSet[] graph;
 
-    @Override
+    CreateTuples(HashSet[] graph) {
+        this.graph = graph;
+    }
+
     public void main(String[] strings) throws Exception {
 
-        graph = readTuple(new ObjectArrayTuple<HashSet>()).item;
+        //graph = readTuple(new ObjectArrayTuple<HashSet>()).item;
         HashSet<Integer> verticesCovered = new HashSet<>();
         HashSet<Integer> P = new HashSet<>();
 

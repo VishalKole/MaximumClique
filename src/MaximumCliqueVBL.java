@@ -13,6 +13,7 @@ public class MaximumCliqueVBL extends Tuple implements Vbl {
 
     MaximumCliqueVBL() {
         this.size = 0;
+        this.maximum = new HashSet<>();
     }
 
     @Override
@@ -51,12 +52,14 @@ public class MaximumCliqueVBL extends Tuple implements Vbl {
     public void reduce(Vbl vbl) {
         MaximumCliqueVBL convVBL = (MaximumCliqueVBL) vbl;
         if (this.size < convVBL.size) {
+            this.size = convVBL.size;
             this.maximum = convVBL.maximum;
         }
     }
 
     public void reduce(int size, HashSet<Integer> hset) {
         if (this.size < size) {
+            this.size = size;
             this.maximum = hset;
         }
     }

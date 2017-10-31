@@ -23,9 +23,14 @@ public class WorkerTask extends Task {
         workerFor().schedule(guided).exec(new Loop() {
 
             MaximumCliqueVBL thrreductionVBL;
-            BronKerbosch algo = new BronKerbosch(graph);
+            BronKerbosch algo;
             BKConfig state;
 
+            public void start() {
+                thrreductionVBL = threadLocal(reductionVBL);
+                algo = new BronKerbosch(graph);
+
+            }
             @Override
             public void run(int i) throws Exception {
                 state = takeTuple((new BKConfig()));
