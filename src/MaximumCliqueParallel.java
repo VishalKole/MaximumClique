@@ -6,7 +6,6 @@ import java.util.HashSet;
 
 public class MaximumCliqueParallel extends Job {
     HashSet[] graph;
-    int size = 0;
     HashSet<Integer> maximum;
 
     @Override
@@ -14,11 +13,14 @@ public class MaximumCliqueParallel extends Job {
         CreateGraph g = new CreateGraph("./res/4N4E.txt");
         graph = g.GenerateGraph();
 
-        putTuple(new ObjectArrayTuple<HashSet>(graph));
-        putTuple(new EmptyTuple());
+        putTuple(9, new ObjectArrayTuple<HashSet>(graph));
 
-        masterFor(0, 9, WorkerTask.class);
+        masterSchedule(guided);
+        masterFor(0, this.graph.length - 1, WorkerTask.class);
         rule().atStart().task(CreateTuples.class);
         rule().atFinish().task(ReduceTask.class);
+
+        putTuple(new EmptyTuple());
+
     }
 }
