@@ -34,4 +34,16 @@ public class BKConfig extends Tuple {
         this.P = (HashSet<Integer>) inStream.readObject();
         this.X = (HashSet<Integer>) inStream.readObject();
     }
+
+    public HashSet<Integer> getP() {
+        return P;
+    }
+
+    public HashSet<Integer> getX() {
+        return X;
+    }
+
+    public HashSet<Integer> getR() {
+        return R;
+    }
 }

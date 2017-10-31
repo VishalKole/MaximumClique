@@ -1,4 +1,3 @@
-import com.intellij.openapi.vcs.history.VcsRevisionNumber;
 
 import java.util.HashSet;
 import java.util.Iterator;
@@ -11,6 +10,10 @@ public class BronKerbosch {
 
     BronKerbosch(HashSet[] graph) {
         this.graph = graph;
+    }
+
+    public void runBronKerbosch(BKConfig configuration){
+        runBronKerbosch(configuration.getR(), configuration.getP(), configuration.getX());
     }
 
     public void runBronKerbosch(HashSet<Integer> R, HashSet<Integer> P, HashSet<Integer> X) {
