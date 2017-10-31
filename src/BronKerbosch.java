@@ -1,4 +1,3 @@
-import com.intellij.openapi.vcs.history.VcsRevisionNumber;
 
 import java.util.HashSet;
 import java.util.Iterator;
