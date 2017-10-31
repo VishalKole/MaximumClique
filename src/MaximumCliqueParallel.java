@@ -18,7 +18,7 @@ public class MaximumCliqueParallel extends Job {
 
         putTuple(new EmptyTuple());
 
-        masterFor(0, graph.length - 1, WorkerTask.class);
+        masterFor(0, 9, WorkerTask.class);
         rule().atFinish().task(ReduceTask.class);
     }
 }
