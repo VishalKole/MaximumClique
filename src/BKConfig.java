@@ -16,8 +16,6 @@ public class BKConfig extends Tuple {
         this.R = r;
         this.P = p;
         this.X = x;
-
-
     }
 
     @Override
