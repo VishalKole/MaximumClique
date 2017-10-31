@@ -3,7 +3,7 @@ import java.util.Iterator;
 
 import edu.rit.pj2.Task;
 
-public class MaximumClique extends Task {
+public class MaximumCliqueSequential extends Task {
     static HashSet[] graph;
     static int size = 0;
     static HashSet<Integer> maximum;
