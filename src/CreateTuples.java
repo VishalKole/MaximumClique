@@ -12,7 +12,7 @@ public class CreateTuples extends Task {
 
         graph = readTuple(new ObjectArrayTuple<HashSet>()).item;
         for (int i = 0; i < graph.length; ++i) {
-
+            BKConfig newConfig = new BKConfig();
 
         }
 

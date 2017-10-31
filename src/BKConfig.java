@@ -4,12 +4,13 @@ import edu.rit.pj2.Tuple;
 import edu.rit.util.BitSet;
 
 import java.io.IOException;
+import java.util.HashSet;
 
 public class BKConfig extends Tuple {
 
-    BitSet[] R;
-    BitSet[] P;
-    BitSet[] X;
+    HashSet<Integer>[] R;
+    HashSet<Integer>[] P;
+    HashSet<Integer>[] X;
 
     public BKConfig()
     {
@@ -25,8 +26,8 @@ public class BKConfig extends Tuple {
 
     @Override
     public void readIn(InStream inStream) throws IOException {
-        this.R = (BitSet[]) inStream.readObject();
-        this.P = (BitSet[]) inStream.readObject();
-        this.X = (BitSet[]) inStream.readObject();
+        this.R = (HashSet<Integer>[]) inStream.readObject();
+        this.P = (HashSet<Integer>[]) inStream.readObject();
+        this.X = (HashSet<Integer>[]) inStream.readObject();
     }
 }

@@ -20,7 +20,7 @@ public class MaximumCliqueVBL extends Tuple implements Vbl {
         try {
             MaximumCliqueVBL vbl = (MaximumCliqueVBL) super.clone();
             vbl.size = this.size;
-            vbl.maximum = (HashSet) this.maximum.clone();
+            vbl.maximum = (HashSet<Integer>) this.maximum.clone();
             return vbl;
         } catch (Exception ex) {
             throw new RuntimeException("GraphRadiusVBL clone error");
@@ -31,16 +31,13 @@ public class MaximumCliqueVBL extends Tuple implements Vbl {
     @Override
     public void writeOut(OutStream outStream) throws IOException {
         outStream.writeLong(size);
-        for (Integer i : maximum)
-            outStream.writeLong(i);
+        outStream.writeObject(maximum);
     }
 
     @Override
     public void readIn(InStream inStream) throws IOException {
         this.size = inStream.readInt();
-        maximum.clear();
-        for (int i = 0; i < size; i++)
-            maximum.add(inStream.readInt());
+        this.maximum = (HashSet<Integer>) inStream.readObject();
     }
 
     @Override
@@ -54,17 +51,13 @@ public class MaximumCliqueVBL extends Tuple implements Vbl {
     public void reduce(Vbl vbl) {
         MaximumCliqueVBL convVBL = (MaximumCliqueVBL) vbl;
         if (this.size < convVBL.size) {
-            this.maximum.clear();
-            for (Integer i : convVBL.maximum)
-                maximum.add(i);
+            this.maximum = convVBL.maximum;
         }
     }
 
     public void reduce(int size, HashSet<Integer> hset) {
         if (this.size < size) {
-            this.maximum.clear();
-            for (Integer i : hset)
-                maximum.add(i);
+            this.maximum = hset;
         }
     }
 }
