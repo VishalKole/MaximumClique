@@ -1,12 +1,14 @@
 import java.util.HashSet;
 import java.util.Iterator;
 
-public class MaximumClique {
+import edu.rit.pj2.Task;
+
+public class MaximumCliqueSequential extends Task {
     static HashSet[] graph;
     static int size = 0;
     static HashSet<Integer> maximum;
 
-    public static void main(String[] s) {
+    public void main(String[] s) throws Exception {
         CreateGraph g = new CreateGraph("./res/200N987E.txt");
 
         try {
