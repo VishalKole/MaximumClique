@@ -2,14 +2,14 @@ import java.util.*;
 import java.io.*;
 
 public class CreateGraph {
-    String path;
-    int v, e;
+    private String path;
+    private int v, e;
 
     CreateGraph(String s) {
         this.path = s;
     }
 
-    public HashSet[] GenerateGraph() throws Exception {
+    public HashSet<Integer>[] GenerateGraph() throws Exception {
         Scanner sc;
 
         sc = new Scanner(new File(path));
@@ -18,7 +18,7 @@ public class CreateGraph {
         HashSet<Integer>[] g = new HashSet[v];
 
         for (int i = 0; i < v; i++)
-            g[i] = new HashSet();
+            g[i] = new HashSet<Integer>();
 
         this.e = sc.nextInt();
         for (int i = 0; i < e; i++) {
