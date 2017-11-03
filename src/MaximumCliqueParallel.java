@@ -18,7 +18,7 @@ public class MaximumCliqueParallel extends Job {
         putTuple(new EmptyTuple());
 
         masterFor(0, 9, WorkerTask.class);
-        rule().atStart().task(CreateTuples.class);
+        rule().atStart().task(CreateBKConfigs.class);
         rule().atFinish().task(ReduceTask.class);
     }
 }
