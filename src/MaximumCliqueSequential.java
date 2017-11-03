@@ -59,4 +59,3 @@ public class MaximumCliqueSequential extends Task {
         }
     }
 }
-
