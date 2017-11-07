@@ -20,6 +20,9 @@ public class WorkerTask extends Task {
         graph = readTuple(new ObjectArrayTuple<HashSet>()).item;
 
 
+        ///
+
+
         workerFor().schedule(guided).exec(new Loop() {
 
             MaximumCliqueVBL thrreductionVBL;
