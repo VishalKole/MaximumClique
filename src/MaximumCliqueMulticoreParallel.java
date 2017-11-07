@@ -15,7 +15,7 @@ public class MaximumCliqueMulticoreParallel extends Task {
 
     @Override
     public void main(String[] strings) throws Exception {
-        CreateGraph g = new CreateGraph("./res/200N987E.txt");
+        CreateGraph g = new CreateGraph("./res/Test1.txt");
         graph = g.GenerateGraph();
 
         MaximumCliqueVBL masterReducer = new MaximumCliqueVBL();
@@ -42,7 +42,7 @@ public class MaximumCliqueMulticoreParallel extends Task {
             public void start() throws Exception {
                 thrReducer = threadLocal(masterReducer);
                 algo = new BronKerbosch(graph);
-                cloneP = (HashSet<Integer>) P.clone();
+
                 R2 = new HashSet<>();
                 X2 = new HashSet<>();
 
@@ -51,16 +51,19 @@ public class MaximumCliqueMulticoreParallel extends Task {
             @Override
             public void run(int i) throws Exception {
 
+                cloneP = (HashSet<Integer>) P.clone();
                 cloneP.remove(i);
                 cloneP.retainAll(graph[i]);
 
-                for (int j = 0; j < graph.length; ++j) {
+                for (int j = 0; j < i; ++j) {
                     cloneP.remove(j);
                 }
 
+                R2.clear();
                 R2.add(i);
 
-                for (int j = 0; j < graph.length; ++j) {
+                X2.clear();
+                for (int j = 0; j < i; ++j) {
                     X2.add(j);
                 }
 
