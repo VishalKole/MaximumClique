@@ -21,23 +21,52 @@ public class MaximumCliqueMulticoreParallel extends Task {
         MaximumCliqueVBL masterReducer = new MaximumCliqueVBL();
 
         // Getting all configurations in an Array
-        configs = new CreateBKConfigs(graph).getConfigs();
+        //configs = new CreateBKConfigs(graph).getConfigs();
 
-        parallelFor(0, configs.length - 1).exec(new Loop() {
+        HashSet<Integer> P = new HashSet<>();
+
+        for (int i = 0; i < graph.length; ++i) {
+            P.add(i);
+        }
+
+        parallelFor(0, graph.length - 1).exec(new Loop() {
 
             MaximumCliqueVBL thrReducer;
             BronKerbosch algo;
             BKConfig config;
+            HashSet<Integer> cloneP;
+            HashSet<Integer> R2;
+            HashSet<Integer> X2;
 
             @Override
             public void start() throws Exception {
                 thrReducer = threadLocal(masterReducer);
                 algo = new BronKerbosch(graph);
+                cloneP = (HashSet<Integer>) P.clone();
+                R2 = new HashSet<>();
+                X2 = new HashSet<>();
+
             }
 
             @Override
             public void run(int i) throws Exception {
-                config = configs[i];
+
+                cloneP.remove(i);
+                cloneP.retainAll(graph[i]);
+
+                for (int j = 0; j < graph.length; ++j) {
+                    cloneP.remove(j);
+                }
+
+                R2.add(i);
+
+                for (int j = 0; j < graph.length; ++j) {
+                    X2.add(j);
+                }
+
+                X2.retainAll(graph[i]);
+
+                config = new BKConfig(R2, cloneP, X2);
                 algo.runBronKerbosch(config);
                 thrReducer.reduce(algo.size, algo.maximum);
             }
