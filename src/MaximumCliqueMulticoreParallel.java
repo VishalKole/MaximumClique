@@ -15,7 +15,7 @@ public class MaximumCliqueMulticoreParallel extends Task {
 
     @Override
     public void main(String[] strings) throws Exception {
-        CreateGraph g = new CreateGraph("./res/Test1.txt");
+        CreateGraph g = new CreateGraph("./res/Test2.txt");
         graph = g.GenerateGraph();
 
         MaximumCliqueVBL masterReducer = new MaximumCliqueVBL();
