@@ -9,7 +9,7 @@ public class MaximumCliqueSequential extends Task {
     static HashSet<Integer> maximum;
 
     public void main(String[] s) throws Exception {
-        CreateGraph g = new CreateGraph("./res/200N987E.txt");
+        CreateGraph g = new CreateGraph("./res/Test1.txt");
 
         try {
             graph = g.GenerateGraph();
