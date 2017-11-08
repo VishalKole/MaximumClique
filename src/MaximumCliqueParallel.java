@@ -8,7 +8,7 @@ public class MaximumCliqueParallel extends Job {
 
     @Override
     public void main(String[] strings) throws Exception {
-        CreateGraph g = new CreateGraph("./res/Test8.txt");
+        CreateGraph g = new CreateGraph("./res/200N987E.txt");
         graph = g.GenerateGraph();
 
         putTuple(9, new ObjectArrayTuple<HashSet>(graph));
