@@ -22,8 +22,7 @@ public class WorkerTask extends Task {
             P.add(i);
         }
 
-
-        workerFor().schedule(guided).exec(new Loop() {
+        workerFor().exec(new Loop() {
 
             MaximumCliqueVBL thrreductionVBL;
             BronKerbosch algo;
@@ -43,6 +42,8 @@ public class WorkerTask extends Task {
             }
             @Override
             public void run(int i) throws Exception {
+                System.out.println(i);
+                System.out.flush();
 
                 cloneP = (HashSet<Integer>) P.clone();
                 cloneP.remove(i);
@@ -66,6 +67,7 @@ public class WorkerTask extends Task {
 
                 algo.runBronKerbosch(state);
                 thrreductionVBL.reduce(algo.size, algo.maximum);
+
             }
         });
 
