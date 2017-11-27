@@ -9,6 +9,9 @@ import java.util.HashSet;
 public class WorkerTask extends Task {
 
     HashSet[] graph;
+    boolean isMainJobDone;
+    boolean areAllBKTuplesProcessed;
+
     MaximumCliqueVBL reductionVBL;
 
     @Override
@@ -65,6 +68,24 @@ public class WorkerTask extends Task {
 
                 state = new BKConfig(R2, cloneP, X2);
 
+                algo.runBronKerbosch(state);
+                thrreductionVBL.reduce(algo.size, algo.maximum);
+
+
+        workerFor().schedule(guided).exec(new Loop() {
+
+            MaximumCliqueVBL thrreductionVBL;
+            BronKerbosch algo;
+            BKConfig state;
+
+            public void start() {
+                thrreductionVBL = threadLocal(reductionVBL);
+                algo = new BronKerbosch(graph);
+
+            }
+            @Override
+            public void run(int i) throws Exception {
+                state = takeTuple((new BKConfig()));
                 algo.runBronKerbosch(state);
                 thrreductionVBL.reduce(algo.size, algo.maximum);
 
