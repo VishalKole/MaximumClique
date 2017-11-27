@@ -31,7 +31,23 @@ public class CreateGraph {
         return g;
     }
 
-    public HashSet<Integer> getHashSet() {
+
+    public int vertices(){
+
+        Scanner sc;
+
+        try {
+        sc = new Scanner(new File(path));
+
+
+        this.v = (sc.nextInt());
+        sc.close();
+        }
+        catch(Exception e){}
+        return this.v;
+    }
+
+    public HashSet<Integer> getHashSet(){
         HashSet<Integer> temp = new HashSet<>();
         for (int i = 0; i < v; i++)
             temp.add(i);
