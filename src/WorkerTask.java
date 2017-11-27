@@ -9,8 +9,6 @@ import java.util.HashSet;
 public class WorkerTask extends Task {
 
     HashSet[] graph;
-    boolean isMainJobDone;
-    boolean areAllBKTuplesProcessed;
     MaximumCliqueVBL reductionVBL;
 
     @Override
@@ -18,24 +16,58 @@ public class WorkerTask extends Task {
 
         reductionVBL = new MaximumCliqueVBL();
         graph = readTuple(new ObjectArrayTuple<HashSet>()).item;
+        HashSet<Integer> P = new HashSet<>();
 
+        for (int i = 0; i < graph.length; ++i) {
+            P.add(i);
+        }
 
-        workerFor().schedule(guided).exec(new Loop() {
+        workerFor().exec(new Loop() {
 
             MaximumCliqueVBL thrreductionVBL;
             BronKerbosch algo;
             BKConfig state;
+            HashSet<Integer> cloneP;
+            HashSet<Integer> R2;
+            HashSet<Integer> X2;
+
 
             public void start() {
                 thrreductionVBL = threadLocal(reductionVBL);
                 algo = new BronKerbosch(graph);
+                R2 = new HashSet<>();
+                X2 = new HashSet<>();
+
 
             }
             @Override
             public void run(int i) throws Exception {
-                state = takeTuple((new BKConfig()));
+                System.out.println(i);
+                System.out.flush();
+
+                cloneP = (HashSet<Integer>) P.clone();
+                cloneP.remove(i);
+                cloneP.retainAll(graph[i]);
+
+                for (int j = 0; j < i; ++j) {
+                    cloneP.remove(j);
+                }
+
+                R2.clear();
+                R2.add(i);
+
+                X2.clear();
+                for (int j = 0; j < i; ++j) {
+                    X2.add(j);
+                }
+
+                X2.retainAll(graph[i]);
+
+                state = new BKConfig(R2, cloneP, X2);
+
                 algo.runBronKerbosch(state);
                 thrreductionVBL.reduce(algo.size, algo.maximum);
+
             }
         });
 
