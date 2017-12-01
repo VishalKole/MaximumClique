@@ -1,0 +1,46 @@
+Test1.txt tardis.cs.rit.edu workers=1
+7994 msec
+10789 msec
+7952 msec
+9046 msec
+7484 msec
+7446 msec
+
+Test1.txt tardis.cs.rit.edu workers=2
+6084
+5708
+6418
+6228
+5842
+13178
+5159
+
+Test1.txt tardis.cs.rit.edu workers=4
+5994
+4484
+6676
+6416
+4500
+4623
+4311
+4422
+4691
+
+Test1.txt tardis.cs.rit.edu workers=8
+4373
+4506
+7348
+4698
+4892
+4658
+4190
+4573
+
+Test1.txt tardis.cs.rit.edu workers=10
+4387
+4747
+4334
+3827
+4246
+4719
+3909
