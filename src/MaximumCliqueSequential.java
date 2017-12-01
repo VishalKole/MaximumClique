@@ -9,12 +9,12 @@ public class MaximumCliqueSequential extends Task {
     static HashSet<Integer> maximum;
 
     public void main(String[] s) throws Exception {
-        if(strings.length < 1){
+        if(s.length < 1){
             System.out.println("Not enough arguments");
             usage();
             terminate(1);
         }
-        CreateGraph g = new CreateGraph(strings[0]);
+        CreateGraph g = new CreateGraph(s[0]);
 
         try {
             graph = g.GenerateGraph();
