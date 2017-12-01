@@ -9,7 +9,12 @@ public class MaximumCliqueParallel extends Job {
     @Override
     public void main(String[] strings) throws Exception {
 
-        CreateGraph g = new CreateGraph("./res/200N987E.txt");
+        if(strings.length < 1){
+            System.out.println("Not enough arguments");
+            usage();
+            terminate(1);
+        }
+        CreateGraph g = new CreateGraph(strings[0]);
 
         graph = g.GenerateGraph();
 
@@ -66,5 +71,9 @@ public class MaximumCliqueParallel extends Job {
             }
 
         }
+    }
+
+    private static void usage(){
+        System.out.println("Usage on cluster computer: java pj2 jar=jarfile.jar MaximumCliqueParallel <source_file_path>");
     }
 }

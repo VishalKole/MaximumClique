@@ -7,7 +7,12 @@ public class MaximumCliqueClusterMassivelyParallel extends Job {
 
     @Override
     public void main(String[] strings) throws Exception {
-        CreateGraph g = new CreateGraph("./res/Test2.txt");
+	if(strings.length < 1){
+            System.out.println("Not enough arguments");
+            usage();
+            terminate(1);
+        }
+        CreateGraph g = new CreateGraph(strings[0]);
         graph = g.GenerateGraph();
 
         putTuple(9, new ObjectArrayTuple<HashSet>(graph));
@@ -17,5 +22,9 @@ public class MaximumCliqueClusterMassivelyParallel extends Job {
         masterFor(0, this.graph.length - 1, WorkerTask.class);
         rule().atFinish().task(ReduceTask.class);
 
+    }
+	
+    private static void usage(){
+        System.out.println("Usage on cluster computer: java pj2 jar=jarfile.jar MaximumCliqueClusterMassivelyParallel <source_file_path>");
     }
 }

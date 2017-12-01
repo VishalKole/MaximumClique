@@ -9,7 +9,12 @@ public class MaximumCliqueSequential extends Task {
     static HashSet<Integer> maximum;
 
     public void main(String[] s) throws Exception {
-        CreateGraph g = new CreateGraph("./res/Test1.txt");
+        if(strings.length < 1){
+            System.out.println("Not enough arguments");
+            usage();
+            terminate(1);
+        }
+        CreateGraph g = new CreateGraph(strings[0]);
 
         try {
             graph = g.GenerateGraph();
@@ -57,5 +62,9 @@ public class MaximumCliqueSequential extends Task {
             P.remove(i);
             X.add(i);
         }
+    }
+	
+    private static void usage(){
+        System.out.println("Usage on non cluster: java pj2 MaximumCliqueSequential <source_file_path> \n" + "Usage on cluster computer: java pj2 jar=jarfile.jar MaximumCliqueSequential <source_file_path>");
     }
 }
