@@ -21,6 +21,7 @@ public class MaximumCliqueClusterMassivelyParallel extends Job {
 
         masterSchedule(guided);
         masterChunk(1);
+        //TODO pass in filename as argument to workers
         masterFor(0, this.graph.length - 1, WorkerTask.class);
         rule().atFinish().task(ReduceTask.class);
 
