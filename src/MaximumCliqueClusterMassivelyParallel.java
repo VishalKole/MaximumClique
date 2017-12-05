@@ -1,3 +1,4 @@
+import edu.rit.pj2.vbl.StringVbl;
 import edu.rit.pj2.Job;
 import edu.rit.pj2.tuple.ObjectArrayTuple;
 import java.util.HashSet;
@@ -18,10 +19,13 @@ public class MaximumCliqueClusterMassivelyParallel extends Job {
 
         //Eliminating tuple requirement by generating graphs locally
         //putTuple(9, new ObjectArrayTuple<HashSet>(graph));
+        //Placing filename in tuple space for the workers
+	StringVbl filename = new StringVbl(strings[0]);
+	putTuple(1, filename);
 
+	// Setting schedules and calling workers
         masterSchedule(guided);
         masterChunk(1);
-        //TODO pass in filename as argument to workers
         masterFor(0, this.graph.length - 1, WorkerTask.class);
         rule().atFinish().task(ReduceTask.class);
 
