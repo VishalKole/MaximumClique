@@ -18,7 +18,7 @@ public class WorkerTask extends Task {
     public void main(String[] strings) throws Exception {
 
         reductionVBL = new MaximumCliqueVBL();
-        graph = readTuple(new ObjectArrayTuple<HashSet>()).item;
+        graph = new CreateGraph(strings[0]).GenerateGraph();//readTuple(new ObjectArrayTuple<HashSet>()).item;
         HashSet<Integer> P = new HashSet<>();
 
         for (int i = 0; i < graph.length; ++i) {
