@@ -7,12 +7,16 @@ public class BronKerbosch {
     HashSet[] graph;
     int size = 0;
     HashSet<Integer> maximum;
+    HashSet<Integer> P = new HashSet<>();
 
     BronKerbosch(HashSet[] graph) {
         this.graph = graph;
+        for (int i = 0; i < graph.length; ++i) {
+            P.add(i);
+        }
     }
 
-    public void runBronKerbosch(BKConfig configuration){
+    public void runBronKerbosch(BKConfig configuration) {
         runBronKerbosch(configuration.getR(), configuration.getP(), configuration.getX());
     }
 
@@ -45,4 +49,29 @@ public class BronKerbosch {
             X.add(i);
         }
     }
+
+    public BKConfig createConfigForVertex(int i) {
+        HashSet<Integer> cloneP;
+        HashSet<Integer> R2;
+        HashSet<Integer> X2;
+        R2 = new HashSet<>();
+        X2 = new HashSet<>();
+
+        cloneP = (HashSet<Integer>) this.P.clone();
+        cloneP.remove(i);
+        cloneP.retainAll(graph[i]);
+
+        for (int j = 0; j < i; ++j)
+            cloneP.remove(j);
+
+        R2.clear();
+        R2.add(i);
+        X2.clear();
+        for (int j = 0; j < i; ++j)
+            X2.add(j);
+        X2.retainAll(graph[i]);
+
+        return new BKConfig(R2, cloneP, X2);
+    }
+
 }

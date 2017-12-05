@@ -11,7 +11,6 @@ public class MaximumCliqueMulticoreParallel extends Task {
 
 
     private HashSet<Integer>[] graph;
-    private BKConfig[] configs;
 
     @Override
     public void main(String[] strings) throws Exception {
@@ -25,14 +24,10 @@ public class MaximumCliqueMulticoreParallel extends Task {
 
         MaximumCliqueVBL masterReducer = new MaximumCliqueVBL();
 
-        // Getting all configurations in an Array
-        configs = new CreateBKConfigs(graph).getConfigs();
-
-        parallelFor(0, configs.length - 1).exec(new Loop() {
+        parallelFor(0, g.vertices() - 1).exec(new Loop() {
 
             MaximumCliqueVBL thrReducer;
             BronKerbosch algo;
-            BKConfig config;
 
             @Override
             public void start() throws Exception {
@@ -42,8 +37,8 @@ public class MaximumCliqueMulticoreParallel extends Task {
 
             @Override
             public void run(int i) throws Exception {
-                config = configs[i];
-                algo.runBronKerbosch(config);
+
+                algo.runBronKerbosch(algo.createConfigForVertex(i));
                 thrReducer.reduce(algo.size, algo.maximum);
             }
         });
@@ -56,9 +51,9 @@ public class MaximumCliqueMulticoreParallel extends Task {
         }
 
     }
-    
+
     private static void usage(){
         System.out.println("Usage on non cluster: java pj2 MaximumCliqueMulticoreParallel <source_file_path> \n" +
-            "Usage on cluster computer: java pj2 jar=jarfile.jar MaximumCliqueMulticoreParallel <source_file_path>");
+                "Usage on cluster computer: java pj2 jar=jarfile.jar MaximumCliqueMulticoreParallel <source_file_path>");
     }
 }
