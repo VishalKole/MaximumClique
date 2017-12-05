@@ -12,6 +12,11 @@ public class WorkerTask extends Task {
 
     MaximumCliqueVBL reductionVBL;
 
+    /**
+     *
+     * @param strings
+     * @throws Exception
+     */
     @Override
     public void main(String[] strings) throws Exception {
 

@@ -3,10 +3,8 @@ import edu.rit.pj2.Task;
 
 import java.util.HashSet;
 
-/**
- *
- * Created by Srinath Obla on 03-11-2017.
- */
+
+
 public class MaximumCliqueMulticoreParallel extends Task {
 
 
