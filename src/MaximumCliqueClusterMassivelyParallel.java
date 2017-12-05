@@ -12,10 +12,12 @@ public class MaximumCliqueClusterMassivelyParallel extends Job {
             usage();
             terminate(1);
         }
+        //Creating graph here just for the length.
         CreateGraph g = new CreateGraph(strings[0]);
         graph = g.GenerateGraph();
 
-        putTuple(9, new ObjectArrayTuple<HashSet>(graph));
+        //Eliminating tuple requirement by generating graphs locally
+        //putTuple(9, new ObjectArrayTuple<HashSet>(graph));
 
         masterSchedule(guided);
         masterChunk(1);
