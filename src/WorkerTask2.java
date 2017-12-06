@@ -1,13 +1,10 @@
 import edu.rit.pj2.Loop;
 import edu.rit.pj2.Task;
-import edu.rit.pj2.TupleListener;
-import edu.rit.pj2.tuple.EmptyTuple;
 import edu.rit.pj2.tuple.ObjectArrayTuple;
 
-import edu.rit.pj2.vbl.StringVbl;
 import java.util.HashSet;
 
-public class WorkerTask extends Task {
+public class WorkerTask2 extends Task {
 
     HashSet[] graph;
 
@@ -22,18 +19,7 @@ public class WorkerTask extends Task {
     public void main(String[] strings) throws Exception {
 
         reductionVBL = new MaximumCliqueVBL();
-	StringVbl filename = tryToReadTuple(new StringVbl());
-	if(filename == null){
-	    System.out.println(nodeName() + ": Could not load filename");
-	    terminate(1);
-	}
-        
-       	graph = new CreateGraph(filename.stringValue()).GenerateGraph();
-        HashSet<Integer> P = new HashSet<>();
-
-        for (int i = 0; i < graph.length; ++i) {
-            P.add(i);
-        }
+        graph = readTuple(new ObjectArrayTuple<HashSet>()).item;
 
         workerFor().exec(new Loop() {
 
@@ -48,15 +34,16 @@ public class WorkerTask extends Task {
             @Override
             public void run(int i) throws Exception {
 
-                algo.runBronKerbosch(algo.createConfigForVertex(i));
+                algo.runBronKerbosch(algo.createConfigForVertex2(i));
                 thrreductionVBL.reduce(algo.size, algo.maximum);
             }
         });
 
         putTuple(reductionVBL);
     }
-    
-    protected static int coresRequired(){
-   	return 1;
+
+    protected static int coresRequired()
+    {
+        return 1;
     }
 }

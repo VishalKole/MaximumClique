@@ -4,8 +4,7 @@ import edu.rit.pj2.Task;
 import java.util.HashSet;
 
 
-
-public class MaximumCliqueMulticoreParallel extends Task {
+public class MaximumCliqueMulticoreParallel2 extends Task {
 
 
     private HashSet<Integer>[] graph;
@@ -22,7 +21,7 @@ public class MaximumCliqueMulticoreParallel extends Task {
 
         MaximumCliqueVBL masterReducer = new MaximumCliqueVBL();
 
-        parallelFor(0, graph.length - 1).schedule(guided).chunk(1).exec (new Loop() {
+        parallelFor(0, (graph.length*(graph.length-1)) - 1).schedule(guided).chunk(1).exec (new Loop() {
 
             MaximumCliqueVBL thrReducer;
             BronKerbosch algo;
@@ -36,7 +35,7 @@ public class MaximumCliqueMulticoreParallel extends Task {
             @Override
             public void run(int i) throws Exception {
 
-                algo.runBronKerbosch(algo.createConfigForVertex(i));
+                algo.runBronKerbosch(algo.createConfigForVertex2(i));
                 thrReducer.reduce(algo.size, algo.maximum);
             }
         });
@@ -53,5 +52,10 @@ public class MaximumCliqueMulticoreParallel extends Task {
     private static void usage(){
         System.out.println("Usage on non cluster: java pj2 MaximumCliqueMulticoreParallel <source_file_path> \n" +
                 "Usage on cluster computer: java pj2 jar=jarfile.jar MaximumCliqueMulticoreParallel <source_file_path>");
+    }
+
+    protected static int coresRequired()
+    {
+        return 1;
     }
 }
