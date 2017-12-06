@@ -82,4 +82,8 @@ public class WorkerTask extends Task {
 
         putTuple(reductionVBL);
     }
+    
+    protected static int coresRequired(){
+   	return 1;
+    }
 }
