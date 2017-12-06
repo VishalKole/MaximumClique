@@ -67,9 +67,7 @@ public class BronKerbosch {
         for (int j = 0; j < i; ++j)
             cloneP.remove(j);
 
-        R2.clear();
         R2.add(i);
-        X2.clear();
         for (int j = 0; j < i; ++j)
             X2.add(j);
         X2.retainAll(graph[i]);
@@ -77,4 +75,39 @@ public class BronKerbosch {
         return new BKConfig(R2, cloneP, X2);
     }
 
+    public BKConfig createConfigForVertex2(int i) {
+
+        int node = i / (graph.length - 1);
+        int point = i - (node * (graph.length - 1));
+
+        if(point>=node) point++;
+
+        HashSet<Integer> cloneP;
+        HashSet<Integer> R2;
+        HashSet<Integer> X2;
+        R2 = new HashSet<>();
+        X2 = new HashSet<>();
+
+        cloneP = (HashSet<Integer>) this.P.clone();
+
+
+        cloneP.remove(node);
+        R2.add(node);
+
+        cloneP.remove(point);
+        R2.add(point);
+
+        cloneP.retainAll(graph[node]);
+        cloneP.retainAll(graph[point]);
+
+        for (int j = 0; j < point; ++j)
+            cloneP.remove(j);
+
+        for (int j = 0; j < point; ++j)
+            if(j!=node) X2.add(j);
+
+        X2.retainAll(graph[point]);
+
+        return new BKConfig(R2, cloneP, X2);
+    }
 }
