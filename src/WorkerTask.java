@@ -4,6 +4,7 @@ import edu.rit.pj2.TupleListener;
 import edu.rit.pj2.tuple.EmptyTuple;
 import edu.rit.pj2.tuple.ObjectArrayTuple;
 
+import edu.rit.pj2.vbl.StringVbl;
 import java.util.HashSet;
 
 public class WorkerTask extends Task {
@@ -21,7 +22,18 @@ public class WorkerTask extends Task {
     public void main(String[] strings) throws Exception {
 
         reductionVBL = new MaximumCliqueVBL();
-        graph = readTuple(new ObjectArrayTuple<HashSet>()).item;
+	StringVbl filename = tryToReadTuple(new StringVbl());
+	if(filename == null){
+	    System.out.println(nodeName() + ": Could not load filename");
+	    terminate(1);
+	}
+        
+       	graph = new CreateGraph(filename.stringValue()).GenerateGraph();
+        HashSet<Integer> P = new HashSet<>();
+
+        for (int i = 0; i < graph.length; ++i) {
+            P.add(i);
+        }
 
         workerFor().exec(new Loop() {
 
@@ -42,5 +54,9 @@ public class WorkerTask extends Task {
         });
 
         putTuple(reductionVBL);
+    }
+    
+    protected static int coresRequired(){
+   	return 1;
     }
 }
