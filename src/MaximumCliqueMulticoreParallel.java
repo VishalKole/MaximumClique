@@ -22,7 +22,7 @@ public class MaximumCliqueMulticoreParallel extends Task {
 
         MaximumCliqueVBL masterReducer = new MaximumCliqueVBL();
 
-        parallelFor(0, g.vertices() - 1).exec(new Loop() {
+        parallelFor(0, graph.length - 1).schedule(guided).chunk(1).exec (new Loop() {
 
             MaximumCliqueVBL thrReducer;
             BronKerbosch algo;
