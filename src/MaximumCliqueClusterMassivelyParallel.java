@@ -15,7 +15,7 @@ public class MaximumCliqueClusterMassivelyParallel extends Job {
         }
         //Creating graph here just for the length.
         CreateGraph g = new CreateGraph(strings[0]);
-        graph = g.GenerateGraph();
+        int vertices = g.getNumberOfVertices();
 
         //Eliminating tuple requirement by generating graphs locally
         //putTuple(9, new ObjectArrayTuple<HashSet>(graph));
@@ -26,7 +26,7 @@ public class MaximumCliqueClusterMassivelyParallel extends Job {
 	// Setting schedules and calling workers
         masterSchedule(guided);
         masterChunk(1);
-        masterFor(0, this.graph.length - 1, WorkerTask.class);
+        masterFor(0, vertices - 1, WorkerTask.class);
         rule().atFinish().task(ReduceTask.class);
 
     }

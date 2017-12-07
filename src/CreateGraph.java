@@ -1,5 +1,4 @@
 import edu.rit.util.Instance;
-
 import java.util.*;
 import java.io.*;
 
@@ -60,8 +59,19 @@ public class CreateGraph {
         return g;
     }
 
+    public int getNumberOfVertices(){
+        int result=0;
+        try {
+            if (path.substring(0, 13).equals("CompleteGraph"))
+                result = ((GraphSpec) Instance.newInstance(path)).V();
+            else
+                result = this.vertices();
+        }
+        catch(Exception e){}
+        return result;
+    }
 
-    public int vertices(){
+    private int vertices(){
 
         Scanner sc;
         try {
