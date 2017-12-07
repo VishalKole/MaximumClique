@@ -1,6 +1,14 @@
+//******************************************************************************
+//
+// File:    MaximumCliqueMulticoreParallel2.java
+//
+// This Java source file is part of the Team research investigation for the
+// partial completion of the coursework
+//
+//******************************************************************************
+
 import edu.rit.pj2.Loop;
 import edu.rit.pj2.Task;
-
 import java.util.HashSet;
 
 

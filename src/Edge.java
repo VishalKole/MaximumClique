@@ -1,3 +1,12 @@
+//******************************************************************************
+//
+// File:    Edge.java
+//
+// This Java source file is part of the Team research investigation for the
+// partial completion of the coursework
+//
+//******************************************************************************
+
 /**
  * Class Edge encapsulates one edge in an undirected graph.
  *

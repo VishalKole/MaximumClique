@@ -1,6 +1,14 @@
+//******************************************************************************
+//
+// File:    MaximumCliqueClusterMassivelyParallel.java
+//
+// This Java source file is part of the Team research investigation for the
+// partial completion of the coursework
+//
+//******************************************************************************
+
 import edu.rit.pj2.vbl.StringVbl;
 import edu.rit.pj2.Job;
-import edu.rit.pj2.tuple.ObjectArrayTuple;
 import java.util.HashSet;
 
 public class MaximumCliqueClusterMassivelyParallel extends Job {

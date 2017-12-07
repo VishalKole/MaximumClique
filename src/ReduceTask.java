@@ -1,3 +1,12 @@
+//******************************************************************************
+//
+// File:    ReduceTask.java
+//
+// This Java source file is part of the Team research investigation for the
+// partial completion of the coursework
+//
+//******************************************************************************
+
 import edu.rit.pj2.Task;
 
 public class ReduceTask extends Task {

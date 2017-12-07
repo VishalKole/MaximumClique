@@ -1,3 +1,13 @@
+//******************************************************************************
+//
+// File:    GraphSpec.java
+//
+// This Java source file is part of the Team research investigation for the
+// partial completion of the coursework
+//
+//******************************************************************************
+
+
 /**
  * Interface GraphSpec specifies the interface for an undirected graph.
  *
