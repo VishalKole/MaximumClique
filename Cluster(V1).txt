@@ -1,0 +1,37 @@
+Cluster(V1)
+
+Completegraph 22
+
+   1 worker  -> 9.93
+   2 workers -> 9.08
+   4 workers -> 7.31
+   8 workers -> 5.77
+
+ Completegraph 23
+
+   1 worker  -> 21.47
+   2 workers -> 17.07
+   3 workers -> 17.02
+   4 workers -> 13.79
+   8 workers -> 9.2
+
+
+Completegraph 24
+
+   1 worker  -> 37.30
+   2 workers -> 35.84
+   4 workers -> 32.33
+   8 workers -> 18.13
+
+ Completegraph 25
+
+   1 worker  -> 74.87
+   2 workers -> 73.87
+   4 workers -> 64.42
+   8 workers -> 37.92
+
+ Completegraph 26
+    1 worker  -> 150.13 
+    2 workers -> 147.97
+    4 workers -> 130.87
+    8 workers -> 76.9

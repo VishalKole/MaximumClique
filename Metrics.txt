@@ -1,4 +1,4 @@
-Cluster(modification) 
+Cluster(V2) 
 
 Completegraph 25
   40 workers -> 40     42.63
@@ -19,6 +19,13 @@ Completegraph 20
    8 workers -> 4.5
   16 workers -> 2.7
 
+Completegraph 21
+
+   1 worker  -> 42.04
+   2 workers -> 21.54
+   4 workers -> 11.63
+   8 workers -> 6.8
+
 
 Completegraph 22
 	
@@ -27,6 +34,60 @@ Completegraph 22
    4 workers -> 24 
    8 workers -> 13.5
   16 workers -> 8
+
+Completegraph 23
+
+   1 worker  -> 188.84
+   2 workers -> 97.38 
+   4 workers -> 52.27
+   8 workers -> 30.37
+
+
+Completegraph 24
+
+   1 worker  -> 
+   2 workers -> 
+   4 workers -> 111.34
+   8 workers -> 
+
+
+Cluster(V1)
+
+Completegraph 22
+
+   1 worker  -> 9.93
+   2 workers -> 9.08
+   4 workers -> 7.31
+   8 workers -> 5.77
+
+ Completegraph 23
+
+   1 worker  -> 21.47
+   2 workers -> 17.07
+   3 workers -> 17.02
+   4 workers -> 13.79
+   8 workers -> 9.2
+
+
+Completegraph 24
+
+   1 worker  -> 37.30
+   2 workers -> 35.84
+   4 workers -> 32.33
+   8 workers -> 18.13
+
+ Completegraph 25
+
+   1 worker  -> 74.87
+   2 workers -> 73.87
+   4 workers -> 64.42
+   8 workers -> 37.92
+
+ Completegraph 26
+    1 worker  -> 150.13 
+    2 workers -> 147.97
+    4 workers -> 130.87
+    8 workers -> 76.9
 
 
 Weak Scaling: 
@@ -63,7 +124,7 @@ Completegraph   20     21     22      23       24
 16 workers ->                             6.02
 
 
-Cluster
+Cluster2
 
 Completegraph  20    21     22      23       24       25      26      27
                
@@ -71,4 +132,15 @@ Completegraph  20    21     22      23       24       25      26      27
  2 workers ->      9.13
  4 workers ->             12.98
  8 workers ->                     18.44                         
+16 workers -> 
+
+
+Cluster1
+
+Completegraph  20    21     22      23       24       25      26      27
+               
+  1 worker -> 
+ 2 workers -> 
+ 4 workers -> 
+ 8 workers -> 
 16 workers -> 
