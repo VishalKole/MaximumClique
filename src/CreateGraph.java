@@ -42,7 +42,13 @@ public class CreateGraph {
 
     public HashSet<Integer>[] GenerateGraph() throws Exception {
 
-        if(path.substring(0,13).equals("CompleteGraph")) return GenerateGraphSpecGraph((GraphSpec) Instance.newInstance(path));
+        if(path.substring(0,13).equals("CompleteGraph")){
+            GraphSpec gs = (GraphSpec) Instance.newInstance(path);
+            this.v=gs.V();
+            this.e = gs.E();
+            return GenerateGraphSpecGraph(gs);
+
+        }
         else return this.GenerateGraph1();
     }
 
