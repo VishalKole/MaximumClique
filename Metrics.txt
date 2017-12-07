@@ -1,0 +1,74 @@
+Cluster(modification) 
+
+Completegraph 25
+  40 workers -> 40     42.63
+  20 workers -> 61.49  63
+  
+
+  4 workers -> 280 
+  8 workers -> 125
+  16 workers -> 69
+  32 workers -> 42
+
+
+Completegraph 20
+
+   1 worker  -> 20
+   2 workers -> 10.8
+   4 workers ->  6
+   8 workers -> 4.5
+  16 workers -> 2.7
+
+
+Completegraph 22
+	
+	1 worker -> 90.9
+   2 workers -> 46
+   4 workers -> 24 
+   8 workers -> 13.5
+  16 workers -> 8
+
+
+Weak Scaling: 
+
+ Multi-core 2
+
+Tardis
+
+ Completegraph 22         23       24       25      26      27
+               
+  1 worker -> 89.07               429.5
+ 2 workers -> 45.9      101.28            479.16
+ 4 workers -> 25.78                               531.25
+ 8 workers ->                                              
+16 workers -> 
+
+Nessie
+
+Completegraph   20     21     22      23       24      
+               
+  1 worker ->  9.91
+ 2 workers ->        10.08  
+ 4 workers ->               15.39
+ 8 workers ->                       25.43                       
+16 workers ->                               40.01
+
+  
+  Completegraph   17    18    19    20     21
+               
+  1 worker ->    1.37
+ 2 workers ->          2.15
+ 4 workers ->                2.74
+ 8 workers ->                      3.62
+16 workers ->                             6.02
+
+
+Cluster
+
+Completegraph  20    21     22      23       24       25      26      27
+               
+  1 worker -> 8.04
+ 2 workers ->      9.13
+ 4 workers ->             12.98
+ 8 workers ->                     18.44                         
+16 workers -> 
