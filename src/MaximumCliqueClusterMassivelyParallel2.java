@@ -26,7 +26,7 @@ public class MaximumCliqueClusterMassivelyParallel2 extends Job {
         // Setting schedules and calling workers
         masterSchedule(guided);
         masterChunk(1);
-        masterFor(0, (graph.length*(graph.length-1)) -1, WorkerTask2.class);
+        masterFor(0, (vertices*(vertices-1)) -1, WorkerTask2.class);
         rule().atFinish().task(ReduceTask.class);
 
     }
