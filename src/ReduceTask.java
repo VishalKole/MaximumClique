@@ -9,7 +9,17 @@
 
 import edu.rit.pj2.Task;
 
+/**
+ * This class performs the reduction in order to arrive at the answer.
+ */
 public class ReduceTask extends Task {
+
+    /**
+     * This is the main function for the program.
+     *
+     * @param strings    Contains the arguments.
+     * @throws Exception Throws all Exceptions.
+     */
     @Override
     public void main(String[] strings) throws Exception {
         MaximumCliqueVBL VBL = new MaximumCliqueVBL();
