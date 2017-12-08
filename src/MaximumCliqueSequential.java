@@ -8,23 +8,35 @@
 //******************************************************************************
 
 import java.util.HashSet;
-import java.util.Iterator;
-
 import edu.rit.pj2.Task;
 
+/**
+ * This class implements the sequential version of the algorithm.
+ */
 public class MaximumCliqueSequential extends Task {
     static HashSet[] graph;
     static int size = 0;
     static HashSet<Integer> maximum;
 
+    /**
+     * This is the main function for the program.
+     *
+     * @param s           Contains the arguments.
+     * @throws Exception  Throws all Exceptions.
+     */
     public void main(String[] s) throws Exception {
+
+        //Argument check.
         if(s.length < 1){
             System.out.println("Not enough arguments");
             usage();
             terminate(1);
         }
+
+        //Graph creation.
         CreateGraph g = new CreateGraph(s[0]);
 
+        //Run the algorithm and check handle any Exceptions.
         try {
             graph = g.GenerateGraph();
             BronKerbosch algo = new  BronKerbosch(graph);;
@@ -44,7 +56,10 @@ public class MaximumCliqueSequential extends Task {
             System.out.println(e);
         }
     }
-	
+
+    /**
+     * This function displays an error when there is a problem with the arguments passed in.
+     */
     private static void usage(){
         System.out.println("Usage on non cluster: java pj2 MaximumCliqueSequential <source_file_path> \n" + "Usage on cluster computer: java pj2 jar=jarfile.jar MaximumCliqueSequential <source_file_path>");
     }
