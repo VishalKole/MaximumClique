@@ -1,16 +1,5 @@
 Cluster(V2) 
 
-Completegraph 25
-  40 workers -> 40     42.63
-  20 workers -> 61.49  63
-  
-
-  4 workers -> 280 
-  8 workers -> 125
-  16 workers -> 69
-  32 workers -> 42
-
-
 Completegraph 20
 
    1 worker  -> 20
@@ -45,10 +34,10 @@ Completegraph 23
 
 Completegraph 24
 
-   1 worker  -> 
-   2 workers -> 
+   1 worker  -> 405.78
+   2 workers -> 214.15
    4 workers -> 111.34
-   8 workers -> 
+   8 workers -> 58.64
 
 
 Cluster(V1)

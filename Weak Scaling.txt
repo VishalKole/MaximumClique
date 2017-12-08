@@ -1,0 +1,21 @@
+Weak Scaling
+
+Cluster(V2)
+
+
+1) CG(21) - 1 worker - 42.04
+CG(22) - 2 workers - 46
+CG(23) - 4 workers - 52.27
+CG(24) - 8 workers - 58.64
+
+2) CG16 1 worker   2.1 
+CG17 2 workers  2.28
+CG18 4 workers  2.35
+CG19 8 workers  2.58
+
+3) CG20 - 1 worker - 20
+CG21 - 2 workers - 21.54
+CG22 - 4 workers - 24
+CG23 - 8 workers - 30.37
+
+4) 
