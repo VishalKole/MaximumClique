@@ -12,6 +12,9 @@ import edu.rit.pj2.Task;
 
 /**
  * This class implements the sequential version of the algorithm.
+ *
+ * @author  Vishal Kole, Srinath Obla, Akshay Sharma
+ * @version 1.0
  */
 public class MaximumCliqueSequential extends Task {
     static HashSet[] graph;

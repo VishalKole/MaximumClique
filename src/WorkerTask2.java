@@ -14,6 +14,9 @@ import java.util.HashSet;
 
 /**
  * This class acts as the worker for version 2 of the algorithm.
+ *
+ * @author  Vishal Kole, Srinath Obla, Akshay Sharma
+ * @version 1.0
  */
 public class WorkerTask2 extends Task {
 

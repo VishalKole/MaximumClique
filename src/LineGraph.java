@@ -59,7 +59,7 @@ public class LineGraph
      * called, it stores, in the v1 and v2 fields of object e, the vertices
      * connected by the next edge. Each vertex is in the range 0 .. V-1.
      *
-     * @param  edge  Edge object in which to store the vertices.
+     * @param  e  Edge object in which to store the vertices.
      *
      * @exception  NoSuchElementException
      *     (unchecked exception) Thrown if this method is called more than E

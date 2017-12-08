@@ -14,6 +14,9 @@ import java.io.*;
 /**
  * This class creates a graph based on the input string and generates the graph
  * that needs to be processed.
+ *
+ * @author  Vishal Kole, Srinath Obla, Akshay Sharma
+ * @version 1.0
  */
 public class CreateGraph {
 

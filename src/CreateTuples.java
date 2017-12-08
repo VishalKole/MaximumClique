@@ -12,6 +12,9 @@ import java.util.HashSet;
 
 /**
  * This class creates the tuples.
+ *
+ * @author  Vishal Kole, Srinath Obla, Akshay Sharma
+ * @version 1.0
  */
 public class CreateTuples extends Task {
 

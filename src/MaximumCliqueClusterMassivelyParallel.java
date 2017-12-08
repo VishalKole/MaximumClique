@@ -14,6 +14,9 @@ import java.util.HashSet;
 /**
  * This class implements version 1 of the cluster parallel version of the algorithm.
  * It contains all the data and functionality required.
+ *
+ * @author  Vishal Kole, Srinath Obla, Akshay Sharma
+ * @version 1.0
  */
 public class MaximumCliqueClusterMassivelyParallel extends Job {
     HashSet[] graph;

@@ -16,6 +16,9 @@ import java.util.HashSet;
 /**
  * This class is used to create configurations for
  * the algorithm.
+ *
+ * @author  Vishal Kole, Srinath Obla, Akshay Sharma
+ * @version 1.0
  */
 public class CreateBKConfigs extends Task {
 

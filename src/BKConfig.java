@@ -19,8 +19,8 @@ import java.util.HashSet;
  * of the Bron-Kerbosch algorithm and functionality associated with it.
  * <P>
  *
- * @author
- * @version
+ * @author  Vishal Kole, Srinath Obla, Akshay Sharma
+ * @version 1.0
  */
 public class BKConfig extends Tuple {
 

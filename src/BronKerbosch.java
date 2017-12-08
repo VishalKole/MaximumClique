@@ -14,6 +14,9 @@ import java.util.Iterator;
  * This class implements the Bron-Kerbosch algorithm. It has functions to generate both
  * configurations and do it on the fly. It also contains functions to perform both are
  * variations of the parallel implementation.
+ *
+ * @author  Vishal Kole, Srinath Obla, Akshay Sharma
+ * @version 1.0
  */
 public class BronKerbosch {
 

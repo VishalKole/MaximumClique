@@ -11,6 +11,9 @@ import edu.rit.pj2.Task;
 
 /**
  * This class performs the reduction in order to arrive at the answer.
+ *
+ * @author  Vishal Kole, Srinath Obla, Akshay Sharma
+ * @version 1.0
  */
 public class ReduceTask extends Task {
 
