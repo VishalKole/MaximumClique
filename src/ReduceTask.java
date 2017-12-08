@@ -31,9 +31,12 @@ public class ReduceTask extends Task {
         while ((StorageVBL = tryToTakeTuple(templateVBL)) != null)
             VBL.reduce(StorageVBL);
 
+        //Debug output.
         System.out.println("Maximum Clique Size: " + VBL.size);
         System.out.println("\n");
         System.out.println("Vertices in the maximum clique: \n");
+
+        //Print progress of the algorithm through the graph.
         for (Integer I : VBL.maximum) {
             System.out.print(I + " ");
         }
