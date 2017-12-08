@@ -8,14 +8,20 @@
 //******************************************************************************
 
 import edu.rit.pj2.Task;
-import edu.rit.pj2.tuple.ObjectArrayTuple;
-
 import java.util.HashSet;
 
+/**
+ * This class creates the tuples.
+ */
 public class CreateTuples extends Task {
 
     HashSet[] graph;
 
+    /**
+     * This is the parameterized constructor for the class.
+     *
+     * @param graph The graph to be used.
+     */
     CreateTuples(HashSet[] graph) {
         this.graph = graph;
     }
@@ -26,10 +32,12 @@ public class CreateTuples extends Task {
         HashSet<Integer> verticesCovered = new HashSet<>();
         HashSet<Integer> P = new HashSet<>();
 
+        //Add to set P.
         for (int i = 0; i < graph.length; ++i) {
             P.add(i);
         }
 
+        //Iterate through and generate the configurations.
         for (int i = 0; i < graph.length; ++i) {
             HashSet<Integer> cloneP = (HashSet<Integer>) P.clone();
             cloneP.remove(i);
