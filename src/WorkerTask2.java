@@ -16,6 +16,7 @@ import edu.rit.pj2.tuple.ObjectArrayTuple;
 import edu.rit.pj2.vbl.StringVbl;
 import java.util.HashSet;
 
+
 public class WorkerTask2 extends Task {
 
     HashSet[] graph;

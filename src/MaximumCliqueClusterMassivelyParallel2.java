@@ -12,11 +12,23 @@ import edu.rit.pj2.Job;
 import edu.rit.pj2.tuple.ObjectArrayTuple;
 import java.util.HashSet;
 
+/**
+ * This class implements version 2 of the cluster parallel version of the algorithm.
+ * It contains all the data and functionality required.
+ */
 public class MaximumCliqueClusterMassivelyParallel2 extends Job {
     HashSet[] graph;
 
+    /**
+     * This is the main function to be run.
+     *
+     * @param strings     Contains the arguments.
+     * @throws Exception  Throws all Exception that might occur.
+     */
     @Override
     public void main(String[] strings) throws Exception {
+
+        //Argument check.
         if(strings.length < 1){
             System.out.println("Not enough arguments");
             usage();
@@ -37,9 +49,11 @@ public class MaximumCliqueClusterMassivelyParallel2 extends Job {
         masterChunk(1);
         masterFor(0, (vertices*(vertices-1)) -1, WorkerTask2.class);
         rule().atFinish().task(ReduceTask.class);
-
     }
 
+    /**
+     * This function displays an error when there is a problem with the arguments passed in.
+     */
     private static void usage(){
         System.out.println("Usage on cluster computer: java pj2 jar=jarfile.jar MaximumCliqueClusterMassivelyParallel <source_file_path>");
     }
