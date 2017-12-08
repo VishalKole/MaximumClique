@@ -13,6 +13,10 @@ import edu.rit.pj2.tuple.ObjectArrayTuple;
 import java.io.IOException;
 import java.util.HashSet;
 
+/**
+ * This class is used to create configurations for
+ * the algorithm.
+ */
 public class CreateBKConfigs extends Task {
 
     private HashSet<Integer>[] graph;
@@ -20,22 +24,43 @@ public class CreateBKConfigs extends Task {
     private final int BUILD_ARRAY = 2;
     private BKConfig[] configs;
 
+    /**
+     * This is the main function.
+     *
+     * @param strings      Strings to be used.
+     * @throws Exception   Throws all Exceptions.
+     */
     @Override
     public void main(String[] strings) throws Exception {
         graph = readTuple(new ObjectArrayTuple<HashSet<Integer>>()).item;
         buildConfigs(BUILD_TUPLE);
     }
 
+    /**
+     * This is the parameterized constructor for the class.
+     *
+     * @param graph The graph to be used.
+     */
     CreateBKConfigs(HashSet<Integer>[] graph) {
         this.graph = graph;
     }
 
+    /**
+     * This function retrieves the configurations.
+     *
+     * @return The configurations.
+     */
     public BKConfig[] getConfigs() {
         configs = new BKConfig[graph.length];
         buildConfigs(BUILD_ARRAY);
         return configs;
     }
 
+    /**
+     * This function is used to build the configurations.
+     *
+     * @param BUILD_TYPE The type of data structure to be used.
+     */
     @SuppressWarnings("unchecked")
     public void buildConfigs(int BUILD_TYPE) {
         HashSet<Integer> verticesCovered = new HashSet<>();
