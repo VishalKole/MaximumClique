@@ -1,0 +1,64 @@
+Test Cases Used To Prove Accuracy of our Approach:
+                                                                                  
+1) Test0.txt                                      
+2) Test1.txt                                      
+3) 200N13089E.txt                                   
+4) brock200_1.txt                                   
+5) brock200_2.txt                                   
+
+Test Cases Used For Strong Scaling:
+
+Multicore(V1):
+
+CompleteGraph(22)
+CompleteGraph(23)
+CompleteGraph(24)
+CompleteGraph(25)
+CompleteGraph(26)
+
+Cluster(V1):
+
+CompleteGraph(22)
+CompleteGraph(23)
+CompleteGraph(24)
+CompleteGraph(25)
+CompleteGraph(26)
+
+Multicore(V2):
+
+CompleteGraph(22)
+CompleteGraph(23)
+CompleteGraph(24)
+CompleteGraph(25)
+CompleteGraph(26)
+
+Cluster(V2):
+
+CompleteGraph(20)
+CompleteGraph(21)
+CompleteGraph(22)
+CompleteGraph(23)
+CompleteGraph(24)
+
+
+Test Cases Used For Weak Scaling:
+
+Cluster(V2):
+
+CompleteGraph(21)
+CompleteGraph(22)
+CompleteGraph(23)
+CompleteGraph(24)
+CompleteGraph(25)
+
+CompleteGraph(16)
+CompleteGraph(17)
+CompleteGraph(18)
+CompleteGraph(19)
+CompleteGraph(20)
+
+CompleteGraph(20)
+CompleteGraph(21)
+CompleteGraph(22)
+CompleteGraph(23)
+CompleteGraph(24)
